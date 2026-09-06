@@ -8,7 +8,7 @@ jobs:
   eval:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: DeterminateSystems/nix-installer-action@v16
+      - uses: actions/checkout@v7
+      - uses: DeterminateSystems/nix-installer-action@v22
       - run: nix eval --raw .#darwinConfigurations.m1.system.drvPath
       - run: nix eval --raw '.#homeConfigurations."jsyed@m1".activationPackage.drvPath'
