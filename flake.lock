@@ -1,5 +1,22 @@
 {
   "nodes": {
+    "brew-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1787796349,
+        "narHash": "sha256-5s+MJAFyemD6lvrtL2c0jQ7P/XChdx1MPXzoCaQY+ic=",
+        "owner": "Homebrew",
+        "repo": "brew",
+        "rev": "3e3da86e4eaccd23f4ce43df9b0a31b16c707347",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Homebrew",
+        "ref": "6.0.20",
+        "repo": "brew",
+        "type": "github"
+      }
+    },
     "direnv-instant": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -28,15 +45,17 @@
         "direnv-instant": "direnv-instant",
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
+        "nix-homebrew": "nix-homebrew",
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "dirtyRev": "f6c6a1eb0f1510812e0810c1673825c05d5d09e9-dirty",
-        "dirtyShortRev": "f6c6a1e-dirty",
-        "lastModified": 1788658743,
-        "narHash": "sha256-ubNq7IhOkKwSUtIg6G9QnF7JX2eJBt9ZyKPI6TY2iRY=",
+        "lastModified": 1788659968,
+        "narHash": "sha256-rP7H3+BLWgrlS5+uVPovX3u7Z5hZ7ifbjIlBgOCIce4=",
+        "ref": "refs/heads/main",
+        "rev": "dcacf09c5acc2c07a43c7a50618865d12ff7651c",
+        "revCount": 126,
         "type": "git",
         "url": "file:///Users/jsyed/code/jaza-syed/dotfiles"
       },
@@ -150,6 +169,24 @@
         "owner": "nix-darwin",
         "ref": "nix-darwin-26.05",
         "repo": "nix-darwin",
+        "type": "github"
+      }
+    },
+    "nix-homebrew": {
+      "inputs": {
+        "brew-src": "brew-src"
+      },
+      "locked": {
+        "lastModified": 1788444135,
+        "narHash": "sha256-ChwTDZPvTmEgZdS30dUfgdXlzAPtZAUWwEH/PfDXZmg=",
+        "owner": "zhaofengli",
+        "repo": "nix-homebrew",
+        "rev": "ec8417a617de4d3c739aed40837e308ebd667165",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zhaofengli",
+        "repo": "nix-homebrew",
         "type": "github"
       }
     },

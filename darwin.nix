@@ -6,6 +6,7 @@
   system.primaryUser = "jsyed";
   users.users.jsyed.home = "/Users/jsyed";
   system.stateVersion = 6;
+  nix-homebrew.user = "jsyed";
 
   # Personal-only Homebrew additions on top of the core set.
   homebrew = {
