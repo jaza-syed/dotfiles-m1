@@ -20,6 +20,21 @@ nix flake update dotfiles
 directories, and the darwin switch must run from a terminal with Full Disk
 Access or the Safari defaults write fails.
 
+## Changing the Claude settings
+
+`~/.claude/settings.json` is a real file seeded from `claude/settings.json`
+here, not a link, because Claude Code's atomic writes would replace a link.
+After editing the repo copy, check for runtime drift and copy it into place:
+
+```sh
+difft ~/.claude/settings.json claude/settings.json
+cp claude/settings.json ~/.claude/settings.json
+```
+
+If the diff shows a runtime change worth keeping (for example a `/model`
+switch), fold it into the repo copy first. New Claude Code sessions pick up
+the copied settings.
+
 ## Testing local core changes
 
 Point the `dotfiles` input at the local checkout to test uncommitted core
