@@ -11,10 +11,9 @@
       url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # Local checkout until the core is published (ROADMAP item 9); relock with
-    # `nix flake update dotfiles` after core commits.
+    # Follows the core's default branch; move with `nix flake update dotfiles`.
     dotfiles = {
-      url = "git+file:///Users/jsyed/code/jaza-syed/dotfiles";
+      url = "github:jaza-syed/dotfiles-core";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

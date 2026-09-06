@@ -51,17 +51,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1788692889,
-        "narHash": "sha256-Zy8ASmJ0uAqKza80Oe6Gmiz1xPRPOeNguOReVoZOxCY=",
-        "ref": "refs/heads/main",
-        "rev": "fc53d1f317c3fb58c6dddb204f7e75ecebcf9128",
-        "revCount": 4,
-        "type": "git",
-        "url": "file:///Users/jsyed/code/jaza-syed/dotfiles"
+        "lastModified": 1788696412,
+        "narHash": "sha256-y+Hu+IhAcmS6DU/fIc7eQxwtuEaLv9u4YEmEAhDEhN4=",
+        "owner": "jaza-syed",
+        "repo": "dotfiles-core",
+        "rev": "e58b600784dee94ac2231f39362d4d70b3fab8ab",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///Users/jsyed/code/jaza-syed/dotfiles"
+        "owner": "jaza-syed",
+        "repo": "dotfiles-core",
+        "type": "github"
       }
     },
     "flake-parts": {
