@@ -33,10 +33,10 @@
         ]
       },
       "locked": {
-        "dirtyRev": "b7fc589671c1f5b96b20913f57c27d18920adfd7-dirty",
-        "dirtyShortRev": "b7fc589-dirty",
-        "lastModified": 1788654635,
-        "narHash": "sha256-VHZ4hzrikGRX1auDkYH3XZpINvvxThCD8DNBx4rkMzY=",
+        "dirtyRev": "f6c6a1eb0f1510812e0810c1673825c05d5d09e9-dirty",
+        "dirtyShortRev": "f6c6a1e-dirty",
+        "lastModified": 1788658743,
+        "narHash": "sha256-ubNq7IhOkKwSUtIg6G9QnF7JX2eJBt9ZyKPI6TY2iRY=",
         "type": "git",
         "url": "file:///Users/jsyed/code/jaza-syed/dotfiles"
       },
