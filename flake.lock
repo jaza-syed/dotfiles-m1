@@ -51,11 +51,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788696412,
-        "narHash": "sha256-y+Hu+IhAcmS6DU/fIc7eQxwtuEaLv9u4YEmEAhDEhN4=",
+        "lastModified": 1788702255,
+        "narHash": "sha256-lP/dJhOHyOVc5/Tg57bSHfRwMbrfuQg4cZciy8xHNS4=",
         "owner": "jaza-syed",
         "repo": "dotfiles-core",
-        "rev": "e58b600784dee94ac2231f39362d4d70b3fab8ab",
+        "rev": "9db1fa9541bcb3002d0ba3122936ca35076b565b",
         "type": "github"
       },
       "original": {
