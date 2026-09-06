@@ -50,5 +50,12 @@ The `git+file` fetch uses the core's working tree: uncommitted changes to
 tracked files are included, but untracked files are not, so `git add` a new
 file before testing it.
 
+The override only matters for modules and packages. Content behind the
+out-of-store links (nvim, shell fragments, the Claude files, themes) always
+comes from the local core checkout through `dotfiles.repoDir`, so editing
+those files takes effect immediately, with no relock or switch, and before
+the edit is committed or pushed. The lock pins what a switch builds, not
+what the links serve.
+
 Everything else is in the core's
 [operations.md](https://github.com/jaza-syed/dotfiles-core/blob/main/operations.md).
