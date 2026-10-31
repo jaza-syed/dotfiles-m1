@@ -1,61 +1,38 @@
 # dotfiles-m1
 
 Machine-specific configuration for the m1 personal Mac, consuming the public
-dotfiles core.
+dotfiles core. Phase 3 of the core's
+[install.md](https://github.com/jaza-syed/dotfiles-core/blob/main/install.md)
+sets up this machine from this repo, and [operations.md](operations.md)
+contains the recurring commands.
 
-## Common commands
+## Layers
 
-```sh
-# User layer
-home-manager switch --flake .#jsyed@m1
+`flake.nix` sets the username once and defines two targets, both named `m1`:
+the standalone Home Manager layer (`home.nix`) and the nix-darwin system layer
+(`darwin.nix`). The user layer imports the core's shared and macOS home
+modules, and the system layer runs sketchybar and borders as launchd services.
 
-# System layer
-sudo /run/current-system/sw/bin/darwin-rebuild switch --flake .#m1
-
-# After a core push: relock, then switch
-nix flake update dotfiles
-```
-
-`darwin-rebuild` needs its absolute path because sudo's PATH lacks the nix
-directories, and the darwin switch must run from a terminal with Full Disk
+`darwin-rebuild` needs its absolute path under sudo because sudo's PATH lacks
+the nix directories. The darwin switch must run from a terminal with Full Disk
 Access or the Safari defaults write fails.
 
-## Changing the Claude settings
+## Claude
 
-`~/.claude/settings.json` is a real file seeded from `claude/settings.json`
-here, not a link, because Claude Code's atomic writes would replace a link.
-After editing the repo copy, check for runtime drift and copy it into place:
+`~/.claude/settings.json` is a real file that the user layer seeds from
+`claude/settings.json` when it is missing, not a link, because Claude Code's
+atomic writes would replace a link.
 
-```sh
-difft ~/.claude/settings.json claude/settings.json
-cp claude/settings.json ~/.claude/settings.json
-```
+## CI and updates
 
-If the diff shows a runtime change worth keeping (for example a `/model`
-switch), fold it into the repo copy first. New Claude Code sessions pick up
-the copied settings.
+CI evaluates both targets on every push and pull request. Renovate opens a
+weekly lock maintenance PR and automerges it on green CI.
 
-## Testing local core changes
+## Where changes take effect
 
-Point the `dotfiles` input at the local checkout to test uncommitted core
-changes before pushing:
-
-```sh
-home-manager switch --flake .#jsyed@m1 \
-  --override-input dotfiles git+file:///Users/jsyed/code/jaza-syed/dotfiles \
-  --no-write-lock-file
-```
-
-The `git+file` fetch uses the core's working tree: uncommitted changes to
-tracked files are included, but untracked files are not, so `git add` a new
-file before testing it.
-
-The override only matters for modules and packages. Content behind the
+A lock override only matters for modules and packages. Content behind the
 out-of-store links (nvim, shell fragments, the Claude files, themes) always
-comes from the local core checkout through `dotfiles.repoDir`, so editing
-those files takes effect immediately, with no relock or switch, and before
-the edit is committed or pushed. The lock pins what a switch builds, not
-what the links serve.
-
-Everything else is in the core's
-[operations.md](https://github.com/jaza-syed/dotfiles-core/blob/main/operations.md).
+comes from the local checkouts through `dotfiles.repoDir` and this repo's
+path, so editing those files takes effect immediately, with no relock or
+switch, and before the edit is committed or pushed. The lock pins what a
+switch builds, not what the links serve.

@@ -1,12 +1,17 @@
 # m1 personal Mac.
-{ ... }:
+{ pkgs, ... }:
 {
-  networking.hostName = "m1";
   nixpkgs.hostPlatform = "aarch64-darwin";
-  system.primaryUser = "jsyed";
-  users.users.jsyed.home = "/Users/jsyed";
   system.stateVersion = 6;
-  nix-homebrew.user = "jsyed";
+  networking.hostName = "m1";
+
+  # Lets chsh set Nix's bash as the login shell.
+  environment.shells = [ pkgs.bashInteractive ];
+
+  # sketchybar and borders come from nixpkgs; launchd runs them here instead
+  # of brew services.
+  services.sketchybar.enable = true;
+  services.jankyborders.enable = true;
 
   # Personal-only Homebrew additions on top of the core set.
   homebrew = {

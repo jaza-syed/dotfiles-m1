@@ -5,12 +5,13 @@ let
   link = path: config.lib.file.mkOutOfStoreSymlink "${machineDir}/${path}";
 in
 {
-  home.username = "jsyed";
-  home.homeDirectory = "/Users/jsyed";
   home.stateVersion = "26.05";
   programs.home-manager.enable = true;
 
   dotfiles.repoDir = "${config.home.homeDirectory}/code/jaza-syed/dotfiles";
+  dotfiles.shell.extraInteractive = ''
+    . ${machineDir}/shell/interactive.sh
+  '';
 
   programs.git.settings.user = {
     name = "Jaza Syed";

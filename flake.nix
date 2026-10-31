@@ -26,11 +26,19 @@
       dotfiles,
       ...
     }:
+    let
+      user = "jsyed";
+    in
     {
-      homeConfigurations."jsyed@m1" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.m1 = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
         modules = [
           dotfiles.homeModules.default
+          dotfiles.homeModules.darwin
+          {
+            home.username = user;
+            home.homeDirectory = "/Users/${user}";
+          }
           ./home.nix
         ];
       };
@@ -39,6 +47,11 @@
         modules = [
           dotfiles.darwinModules.defaults
           dotfiles.darwinModules.homebrew
+          {
+            system.primaryUser = user;
+            users.users.${user}.home = "/Users/${user}";
+            nix-homebrew.user = user;
+          }
           ./darwin.nix
         ];
       };
