@@ -53,11 +53,11 @@
         "sketchybar": "sketchybar"
       },
       "locked": {
-        "lastModified": 1793124727,
-        "narHash": "sha256-Cf3kvVuHPJgOCSP1qELcfzEBcbI645fLzrmlirIDfeY=",
+        "lastModified": 1793537669,
+        "narHash": "sha256-Usaiug1NHQAQpvo0BeOeYEA6ut3lCUpXfwSBg5E4YH8=",
         "owner": "jaza-syed",
         "repo": "dotfiles-core",
-        "rev": "a01bfbadad9c4a225aaf07b12da9377b39e8406c",
+        "rev": "60cf4da76b83da8d86e31b4f51e4d9f97eed178c",
         "type": "github"
       },
       "original": {
@@ -210,11 +210,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1792898606,
-        "narHash": "sha256-Mg3rRjsbMqhSMxop5PYMXos8SwAjejrxSgVThTvP9eg=",
+        "lastModified": 1793410479,
+        "narHash": "sha256-HzgjxrLY4AEc0044ZuM5CHbLSWLZgDlay1idmzvvpJs=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "1f607aa79b6356ed45d3cd3c8079c196e79efa2c",
+        "rev": "fa1373130d5a21c040a47c5dbe1913d59ed91808",
         "type": "github"
       },
       "original": {
