@@ -50,10 +50,6 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash ~/.claude/hooks/deny-sleep.sh"
-          },
-          {
-            "type": "command",
             "command": "bash ~/.claude/hooks/deny-bad-commands.sh"
           }
         ]
